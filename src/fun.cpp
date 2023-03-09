@@ -22,7 +22,7 @@ unsigned int faStr1(const char *str) {
 			else if (!isdigit(str[i])) {
 				if (no_digit) {
 					res += 1;
-				}				
+				}			
 			}
 		}
 		else {
@@ -31,7 +31,7 @@ unsigned int faStr1(const char *str) {
 				no_digit = false;
 			}
 		}
-		i++;	
+		i++;
 	}
 	return res;
 }
