@@ -3,7 +3,7 @@
 #include <string>
 
 unsigned int faStr1(const char *str) {
-    bool space = true;
+	bool space = true;
 	int res = 0;
 	int i = 0;
 	bool no_digit = true;
@@ -37,7 +37,7 @@ unsigned int faStr1(const char *str) {
 }
 
 unsigned int faStr2(const char *str) {
-    int res = 0;
+	int res = 0;
 	bool space = true;
 	bool no_upper = true;
 	int i = 0;
@@ -71,7 +71,7 @@ unsigned int faStr2(const char *str) {
 }
 
 unsigned int faStr3(const char *str) {
-    double res = 0;
+	double res = 0;
 	int quantity = 0;
 	int sum = 0;
 	bool space = true;
