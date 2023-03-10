@@ -15,24 +15,26 @@ unsigned int faStr1(const char *str) {
 			space = true;
 			continue;
 		}
-		if (space) {
-			space = false;
-			if (isdigit(str[i])) {
-				no_digit = false;
-			}
-			else if (!isdigit(str[i])) {
-				if (no_digit) {
-					res += 1;
-				}			
-			}
-		}
 		else {
-			if (isdigit(str[i]) && no_digit) {
-				res -= 1;
-				no_digit = false;
+			if (space) {
+				space = false;
+				if (isdigit(str[i])) {
+					no_digit = false;
+				}
+				else if (!isdigit(str[i])) {
+					if (no_digit) {
+						res += 1;
+					}
+				}
 			}
+			else {
+				if (isdigit(str[i]) && no_digit) {
+					res -= 1;
+					no_digit = false;
+				}
+			}
+			i++;
 		}
-		i++;
 	}
 	return res;
 }
@@ -60,7 +62,7 @@ unsigned int faStr2(const char *str) {
 				}
 			}
 			else {
-				if (isupper(str[i]) && no_upper) {
+				if ((isupper(str[i]) || (!isalnum(str[i]))) && no_upper) {
 					res -= 1;
 					no_upper = false;
 				}
