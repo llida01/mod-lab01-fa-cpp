@@ -14,8 +14,7 @@ unsigned int faStr1(const char *str) {
 			no_digit = true;
 			space = true;
 			continue;
-		}
-		else {
+		} else {
 			if (space) {
 				space = false;
 				if (isdigit(str[i])) {
@@ -26,8 +25,7 @@ unsigned int faStr1(const char *str) {
 						res += 1;
 					}
 				}
-			}
-			else {
+			} else {
 				if (isdigit(str[i]) && no_digit) {
 					res -= 1;
 					no_digit = false;
@@ -50,18 +48,15 @@ unsigned int faStr2(const char *str) {
 			space = true;
 			no_upper = true;
 			continue;
-		}
-		else {
+		} else {
 			if (space) {
 				space = false;
 				if (isupper(str[i])) {
 					res += 1;
-				}
-				else {
+				} else {
 					no_upper = false;
 				}
-			}
-			else {
+			} else {
 				if ((isupper(str[i]) || (!isalnum(str[i]))) && no_upper) {
 					res -= 1;
 					no_upper = false;
@@ -86,8 +81,7 @@ unsigned int faStr3(const char *str) {
 			space = true;
 			is_litera = false;
 			continue;
-		}
-		else {
+		} else {
 			if (space) {
 				quantity += 1;
 				space = false;
@@ -101,8 +95,7 @@ unsigned int faStr3(const char *str) {
 	}
 	if (quantity == 0 || sum == 0) {
 		return 0;
-	}
-	else {
+	} else {
 		res = round(double(sum) / quantity);
 		return res;
 	}
