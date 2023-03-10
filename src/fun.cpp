@@ -56,9 +56,11 @@ unsigned int faStr2(const char *str) {
                                         no_upper = false;
                                 }
                         } else {
-                                if ((isupper(str[i]) || (!isalnum(str[i]))) && no_upper) {
-                                        res -= 1;
-                                        no_upper = false;
+                                if (isupper(str[i]) || (!isalnum(str[i]))) {
+                                    if (no_upper) {
+                                            res -= 1;
+                                            no_upper = false;
+                                    }
                                 }
                         }
                         i++;
@@ -95,7 +97,7 @@ unsigned int faStr3(const char *str) {
         if (quantity == 0 || sum == 0) {
                 return 0;
         } else {
-                res = round(double(sum) / quantity);
+                res = static_cast<int>(sum / quantity);
                 return res;
         }
 }
