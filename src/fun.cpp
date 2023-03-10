@@ -4,7 +4,7 @@
 #include <cmath>
 
 unsigned int faStr1(const char *str) {
-	bool space = true;
+        bool space = true;
 	int res = 0;
 	int i = 0;
 	bool no_digit = true;
